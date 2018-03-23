@@ -37,7 +37,16 @@ class App < Sinatra::Base
     @operation = params[:operation]
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-    @return_string = @number1 @operation @number2
+    if @operation.downcase == "add"
+      @return_value = @number1 + @number2
+    elsif @operation.downcase == "subtract"
+      @return_value = @number1 - @number2
+    elsif @operation.downcase == "divide"
+      @return_value = @number1 / @number2
+    elsif @operation.downcase == "multiply"
+      @return_value = @number1 * @number2
+    end
+      
   end
 
 end
