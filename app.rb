@@ -46,7 +46,8 @@ class App < Sinatra::Base
     elsif @operation.downcase == "multiply"
       @return_value = @number1 * @number2
     end
-      
+    @return_value.to_s
+
   end
 
 end
